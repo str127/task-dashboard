@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Management Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Task Management Dashboard</h1>
+        <button id="addTaskBtn">+ Add Task (Ctrl+N)</button>
+        <input type="text" id="searchInput" placeholder="Search tasks...">
+    </header>
+
+    <section class="filters">
+        <select id="filterStatus">
+            <option value="all">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+        <select id="filterPriority">
+            <option value="all">All Priorities</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <select id="sortBy">
+            <option value="date">Sort by Date</option>
+            <option value="priority">Sort by Priority</option>
+        </select>
+    </section>
+
+    <section id="taskContainer" class="tasks"></section>
+</div>
+
+<!-- Task Modal -->
+<div id="taskModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2 id="modalTitle">Add New Task</h2>
+        <form id="taskForm">
+            <input type="text" id="taskTitle" placeholder="Task Title" required>
+            <textarea id="taskDescription" placeholder="Task Description"></textarea>
+            <select id="taskCategory">
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+            </select>
+            <select id="taskPriority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit">Save Task</button>
+        </form>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
